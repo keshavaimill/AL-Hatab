@@ -1,7 +1,8 @@
 // API client for Text2SQL backend
-// Uses Vite proxy in development, or direct URL in production
-const API_BASE_URL = import.meta.env.VITE_TEXT2SQL_API_URL || 
-  (import.meta.env.DEV ? "/api/text2sql" : "http://localhost:5000");
+// Uses explicit backend URL, overridable via VITE_TEXT2SQL_API_URL
+const API_BASE_URL =
+  import.meta.env.VITE_TEXT2SQL_API_URL ||
+  (import.meta.env.DEV ? "http://localhost:5000" : "https://al-hatab.onrender.com");
 
 export interface QueryResponse {
   sql: string;
